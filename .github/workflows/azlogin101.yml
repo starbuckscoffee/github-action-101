@@ -40,8 +40,5 @@ jobs:
         uses: Azure/login@v1
         with:
           # Paste output of `az ad sp create-for-rbac` as value of secret variable: AZURE_CREDENTIALS
-          creds: "maN8Q~iv6iXjyyKhm0oR1HWAg2JLmajOOOjwCcmA"
-          client-id: "06cc43db-c05e-42b2-a47f-633022563c8b"
-          tenant-id: "bfa4e849-859a-4b90-8756-944872678dc8"
-          subscription-id: "340954be-b2b0-423b-9784-dbcaa0fb8107"
+          creds: ${{secrets.AZURE_CREDENTIALS}}
 
