@@ -41,4 +41,6 @@ jobs:
         with:
           # Paste output of `az ad sp create-for-rbac` as value of secret variable: AZURE_CREDENTIALS
           creds: ${{secrets.AZURE_CREDENTIALS}}
+          allow-no-subscriptions: true
+          
 
