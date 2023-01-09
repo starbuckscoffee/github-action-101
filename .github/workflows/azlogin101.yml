@@ -44,6 +44,4 @@ jobs:
           tenant-id: bfa4e849-859a-4b90-8756-944872678dc8
           # Azure subscriptionId
           subscription-id: 340954be-b2b0-423b-9784-dbcaa0fb8107
-        run: |
-          az account show
-            
+
