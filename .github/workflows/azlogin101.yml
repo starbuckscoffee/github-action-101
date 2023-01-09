@@ -24,6 +24,16 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+      - uses: Azure/login@v1
+          with:
+            # Paste output of `az ad sp create-for-rbac` as value of secret variable: AZURE_CREDENTIALS
+            creds: jyR8Q~blXhm3Xli9TEo2PjUKXi~7IdcM31UULbRP
+            # ClientId of the Azure Service principal created.
+            client-id: c37d50a6-38a0-4b83-8b89-03182ee6dca2
+            # TenantId of the Azure Service principal created.
+            tenant-id: bfa4e849-859a-4b90-8756-944872678dc8
+            # Azure subscriptionId
+            subscription-id: 340954be-b2b0-423b-9784-dbcaa0fb8107
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
@@ -34,17 +44,8 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+          
       - name: Azure Login
-          uses: Azure/login@v1.4.6
-          with:
-            # Paste output of `az ad sp create-for-rbac` as value of secret variable: AZURE_CREDENTIALS
-            creds: jyR8Q~blXhm3Xli9TEo2PjUKXi~7IdcM31UULbRP
-            # ClientId of the Azure Service principal created.
-            client-id: c37d50a6-38a0-4b83-8b89-03182ee6dca2
-            # TenantId of the Azure Service principal created.
-            tenant-id: bfa4e849-859a-4b90-8756-944872678dc8
-            # Azure subscriptionId
-            subscription-id: 340954be-b2b0-423b-9784-dbcaa0fb8107
           run: |
             az account show
             
